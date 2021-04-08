@@ -59,7 +59,7 @@ export const loadMorePhones = () => async (dispatch, getState) => {
     }
 }
 
-export const fetchPhoneById = id => async (dispatch, getState) =>  {
+export const fetchPhoneById = id => async (dispatch) =>  {
     dispatch({
         type: FETCH_PHONE_BY_ID_START
     })
@@ -72,7 +72,7 @@ export const fetchPhoneById = id => async (dispatch, getState) =>  {
         })
     } catch (err) {
         dispatch({
-            type:FETCH_PHONE_BY_ID_FAILURE,
+            type: FETCH_PHONE_BY_ID_FAILURE,
             payload: err,
             error: true
         })

@@ -39,7 +39,8 @@ class Phones extends Component {
                         <Button className='btn btn-info'>
                             <Link 
                                 style={{color: '#fff'}}
-                                to={`/phones/${phone.id}`}>
+                                to={`/phones/${phone.id}`}
+                                >
                                 More info
                             </Link>
                         </Button>                        

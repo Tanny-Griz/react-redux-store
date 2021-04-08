@@ -3,7 +3,9 @@ import BasketCart from '../BasketCart'
 
 const SideBar = () => {
     return (
-        <BasketCart />
+        <div>
+            <BasketCart/>
+        </div>
     )
 }
 

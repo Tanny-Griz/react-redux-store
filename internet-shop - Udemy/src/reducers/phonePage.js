@@ -13,6 +13,6 @@ export default (state = initialState, {type, payload}) => {
                 id: R.prop('id', payload)
             })
         default: 
-        return state
+            return state
     }
 }

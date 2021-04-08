@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import { Container, Row, Col, Card, CardImg, CardText, CardTitle, Button, CardBody } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import * as R from 'ramda'
 
-import {fetchPhoneById} from '../../actions'
+import {fetchPhoneById, addPhoneToBasket} from '../../actions'
 import { getPhoneById } from '../../selectors';
 import BasketCart from '../../components/BasketCart'
 
 // каждую стр сюда заворачивать
 class Phone extends Component {
     componentDidMount() {
-        console.log(this.props);
-        this.props.fetchPhoneById(this.props.match.params.id)
+        const phoneId = this.props.match.params.id
+        this.props.fetchPhoneById(phoneId)
     }
 
     renderFields() {
@@ -73,17 +73,21 @@ class Phone extends Component {
                 >
                     Back to store
                 </Link>
-                <button className='btn btn-success'></button>
+                <button 
+                    className='btn btn-success'
+                    onClick={() => addPhoneToBasket(phone.id)}
+                    >
+                        add to cart
+                    </button>
             </div>
         )
     }
 
     render () {
-        console.log(this.props.phone);
         const {phone} = this.props
         return (
             <Container>
-                <Row>
+                <Row style={{padding: '30px 0'}}>
                     <Col md="9" >
                         {phone && this.renderContent()}
                     </Col>
@@ -105,7 +109,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    fetchPhoneById
+    fetchPhoneById,
+    addPhoneToBasket
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Phone) 
