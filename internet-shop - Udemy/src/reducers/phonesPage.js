@@ -1,12 +1,14 @@
 import * as R from 'ramda'
 import {
     FETCH_PHONES_SUCCESS,
-    LOAD_MORE_PHONES_SUCCESS
+    LOAD_MORE_PHONES_SUCCESS,
+    SEARCH_PHONE
 } from '../actionTypes'
 
 const initialState = {
     // только id телефонов, которые зафетчили
-    ids: []
+    ids: [],
+    search: ''
 }
 
 // в этом reducer только айдишники, что б по ним найти телеф из основного редьюсера
@@ -20,6 +22,10 @@ export default (state = initialState, {type, payload}) => {
             const ids = R.pluck('id', payload)
             return R.merge(state, {
                 ids: R.concat(state.ids, ids)
+            })
+        case SEARCH_PHONE:
+            return R.merge(state, {
+                search: payload
             })
         default:
             return state

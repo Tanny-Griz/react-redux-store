@@ -10,7 +10,8 @@ import {FETCH_PHONES_START,
         FETCH_PHONE_BY_ID_SUCCESS,
         FETCH_PHONE_BY_ID_FAILURE,
 
-        ADD_PHONE_TO_BASKET
+        ADD_PHONE_TO_BASKET,
+        SEARCH_PHONE
     } from '../actionTypes'
 import {fetchPhones as fetchPhonesApi,
         loadMorePhones as loadMorePhonesApi,
@@ -84,5 +85,13 @@ export const addPhoneToBasket = id => dispatch => {
     dispatch({
         type: ADD_PHONE_TO_BASKET,
         payload: id
+    })
+}
+
+export const searchPhone = text => dispatch => {
+    // поймать этот экшин в редьюсере
+    dispatch({
+        type: SEARCH_PHONE,
+        payload: text
     })
 }

@@ -3,8 +3,16 @@ import * as R from 'ramda'
 export const getPhoneById = (state, id) => R.prop(id, state.phones)
 
 export const getPhones = state => {
-    //                         ф-ция для каждого эл      массив
-    const phones = R.map(id => getPhoneById(state, id), state.phonesPage.ids)
+    // const phones = R.map(id => getPhoneById(state, id), state.phonesPage.ids)
+    // return phones
+    const applySearch = item => R.contains(
+        state.phonesPage.search, // к-й сохранили в редьюсер
+        R.prop('name', item) // = item.name
+    )
+    const phones = R.compose(
+        R.filter(applySearch),
+        R.map(id => getPhoneById(state, id)) // 2. вызываются на этот мар
+    )(state.phonesPage.ids) // 1. эти данные 
     return phones
 }
 
