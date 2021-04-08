@@ -1,21 +1,17 @@
 import React from 'react'
-import { Switch, Route } from 'react-router'
 import { Container, Row, Col } from 'reactstrap'
-import Phones from '../Phones'
 
-const routes = (
-    <Switch>
-        <Route path="/" component={Phones} exact />
-        {/* <Route path="/basket" component={Basket} exact /> */}
-    </Switch>
-)
+import SideBar from '../../components/Sidebar'
 
-const Layout = () => (
+// каждую стр сюда заворачивать
+const Layout = ({children}) => (
     <Container>
-        <Row>
-            <Col md="3" >sideBar</Col>
+        <Row style={{padding: '30px 0'}}>
+            <Col md="3" >
+                <SideBar />
+            </Col>
             <Col md="9" >
-                {routes}
+                {children}
             </Col>
         </Row>         
     </Container>

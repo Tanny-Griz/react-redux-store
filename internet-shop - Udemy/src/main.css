@@ -1,3 +1,8 @@
+.holder-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
 #page-preloader {
     position: fixed;
     left: 0;
