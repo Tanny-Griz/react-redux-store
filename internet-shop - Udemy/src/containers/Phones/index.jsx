@@ -75,9 +75,9 @@ class Phones extends Component {
     }
 }
 //                   глабальный стейт
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     // фильтруем эти данные. ищем по массиву с айдишниками
-    phones: getPhones(state)
+    phones: getPhones(state, ownProps)
 })
 
 const mapDispatchToProps = {
