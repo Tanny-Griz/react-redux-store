@@ -26,9 +26,9 @@ class Search extends Component {
 
     render () {
         return (
-            <div>
+            <div className='holder-search'>
                 <h3>Quick shop</h3>
-                <div className='input-group'>
+                <div>
                     <form onSubmit={this.handleSubmit}>
                         <input 
                             type="text"

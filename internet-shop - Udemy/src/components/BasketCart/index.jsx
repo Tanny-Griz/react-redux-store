@@ -10,15 +10,13 @@ import {
 
 const BasketCart = ({totalBasketCount, totalPrice}) => {
     return (
-        <div>
-            <div>
-                <Link to='/basket'
-                    className='btn btn-info'
-                    >
-                     <i className='fa fa-fa-shoping-cart'></i>
-                    <span>{totalBasketCount} item(s) - ${totalPrice} </span>   
-                </Link>
-            </div>
+        <div className='holder-cart'>
+            <Link to='/basket'
+                className='btn btn-info'
+                >
+                    <i className='fa fa-fa-shoping-cart'></i>
+                <span>{totalBasketCount} item(s) - ${totalPrice} </span>   
+            </Link>
         </div>
     )
 }

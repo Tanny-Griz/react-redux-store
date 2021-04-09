@@ -29,3 +29,7 @@ export const getTotalBasketPrice = state => {
 
     return totalPrice
 }
+
+export const getCategories = state => R.values(state.categories)
+
+export const getActiveCategoryId = ownProps => R.path(['match', 'params', 'id'], ownProps)

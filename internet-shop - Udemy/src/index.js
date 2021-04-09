@@ -1,4 +1,4 @@
-import './main.css'
+// import './main.css'
 import './App.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 

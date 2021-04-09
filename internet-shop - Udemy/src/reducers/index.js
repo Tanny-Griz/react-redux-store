@@ -5,6 +5,7 @@ import phones from './phones'
 import phonesPage from './phonesPage'
 import phonePage from './phonePage'
 import basket from './basket'
+import categories from './categories'
 
 // рутовый редьюсер
 export default history => combineReducers({
@@ -12,5 +13,6 @@ export default history => combineReducers({
     phones,
     phonesPage,
     phonePage,
-    basket
+    basket,
+    categories
 })

@@ -1,6 +1,7 @@
 import * as R from 'ramda'
 
 import phones from './mockPhones'
+import categories from './mockCategories'
 
 export const fetchPhones = async () => {
     return new Promise((resolve) => {
@@ -19,5 +20,11 @@ export const fetchPhoneById = async (id) => {
     return new Promise((resolve) => {
         const phone = R.find(R.propEq('id', id), phones)
         resolve(phone)
+    })
+}
+
+export const fetchCategories = async () => {
+    return new Promise((resolve) => {
+        resolve(categories)
     })
 }

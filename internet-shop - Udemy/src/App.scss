@@ -22,3 +22,30 @@
   display: flex;
   justify-content: space-between;
 }
+
+.holder-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.holder-search {
+  padding: 15px 0;
+  input {
+    display: block !important;
+    width: 100%;
+  }
+}
+
+.holder-cart {
+  padding: 15px 0;
+  a {
+      display: block;
+    width: 100%;
+  }
+
+}

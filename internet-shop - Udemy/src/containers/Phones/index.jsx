@@ -4,7 +4,11 @@ import { Container, Row, Col, Button, Card, CardImg, CardBody, CardTitle, CardTe
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {fetchPhones, loadMorePhones, addPhoneToBasket} from '../../actions'
+import {
+    fetchPhones, 
+    loadMorePhones, 
+    addPhoneToBasket,
+    fetchCategories} from '../../actions'
 import {getPhones} from '../../selectors'
 import Layout from '../Layout'
 
@@ -14,6 +18,7 @@ class Phones extends Component {
     componentDidMount() {
         // это наш экшин
         this.props.fetchPhones()
+        this.props.fetchCategories()
     }
 
     renderPhone(phone, index) {
@@ -79,7 +84,8 @@ const mapDispatchToProps = {
     // fetchPhones через connect попадет в this.props
     fetchPhones,
     loadMorePhones,
-    addPhoneToBasket
+    addPhoneToBasket,
+    fetchCategories
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Phones)
